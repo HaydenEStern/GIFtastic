@@ -25,6 +25,7 @@ var topics = [];
 
 // api call to GIPHY
 $(document).on("click", ".giphy", function() {
+	// add data attribute to gif
   	var name = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=4Ob494fCJWhDa7vCwGdXzt6fck2dnpl3&limit=10";
     $.ajax({
