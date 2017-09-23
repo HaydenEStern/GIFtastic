@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Arts and Crafts GIF Generator</title>
+	<title>Goth GIF Generator</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+	<nav class="navbar navbar-inverse bg-inverse sticky-top">
+		<span class="navbar-brand">Goth GIF Generator</span>
+		<ul class="navbar-nav justify-content-end">
+			<li class="navbar-item navbar-text">input text to generate a button, click button to see GIFs</li>
+			<li class="navbar-item">
+		<form id="gif-search" class="form-inline">
+		<input type="text" id="user-input" class="form-control">
+		<input type="submit" id="create-button" value="enter a goth topic" class="btn btn-outline-secondary">
+	</form>
+</li>
+</ul>
+	</nav>
 	<div class="container-fluid" id="button-holder">
 	</div>
-<div class="row">
-	<div class="col-md-9" id="gif-holder"></div>
-	<div class="col-md-2" id="gif-search">
-		<input type="text" id="user-input">
-		<input type="submit" id="create-button">
-	</div>
-</div>
+	<div id="gif-holder"></div>
+
 
 
 

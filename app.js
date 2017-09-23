@@ -6,14 +6,14 @@ var topics = [];
 
         $("#button-holder").empty();
 
-        // Looping through the array of movies
+        // Looping through the array of gif topics
         for (var i = 0; i < topics.length; i++) {
 
-          // Then dynamicaly generating buttons for each movie in the array
+          // Then dynamicaly generating buttons for each topic in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
           var a = $("<button>");
           // Adding a class of gif to our button
-          a.addClass("giphy");
+          a.addClass("giphy btn btn-outline-secondary");
           // Adding a data-attribute
           a.attr("data-name", topics[i]);
           // Providing the initial button text
@@ -23,6 +23,7 @@ var topics = [];
         }
       };
 
+// api call to GIPHY
 $(document).on("click", ".giphy", function() {
   	var name = $(this).attr("data-name");
     var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + name + "&api_key=4Ob494fCJWhDa7vCwGdXzt6fck2dnpl3&limit=10";
@@ -33,7 +34,7 @@ $(document).on("click", ".giphy", function() {
       var results = response.data;
 
           for (var i = 0; i < results.length; i++) {
-            var gifDiv = $("<div class='item'>");
+            var gifSpan = $("<span class='item'>");
 
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
@@ -47,15 +48,15 @@ $(document).on("click", ".giphy", function() {
 
 
 
-            gifDiv.prepend(p);
-            gifDiv.prepend(gifImage);
+            gifSpan.prepend(p);
+            gifSpan.prepend(gifImage);
 
-            $("#gif-holder").prepend(gifDiv);
+            $("#gif-holder").prepend(gifSpan);
 
     }
 });
 });
-
+// function to animate gifs
     $(document).on("click", ".gif", function() {
 
         var state = $(this).attr("data-state");
@@ -74,6 +75,7 @@ $(document).on("click", ".giphy", function() {
 
     });
 
+// transform user input into buttons
 $("#create-button").on("click", function() {
 	event.preventDefault();
 	var userInput = $("#user-input").val().trim();
