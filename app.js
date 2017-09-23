@@ -57,7 +57,7 @@ $(document).on("click", ".giphy", function() {
     }
 });
 });
-// function to animate gifs
+// function to animate gifs and pause them
     $(document).on("click", ".gif", function() {
 
         var state = $(this).attr("data-state");
